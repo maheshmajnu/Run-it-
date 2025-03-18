@@ -73,6 +73,15 @@ public class FirstPersonController : MonoBehaviour
     public float sprintFOV = 80f;
     public float sprintFOVStepTime = 10f;
 
+
+   
+
+
+
+
+
+
+
     // Sprint Bar
     public bool useSprintBar = true;
     public bool hideBarWhenFull = true;
@@ -116,6 +125,20 @@ public class FirstPersonController : MonoBehaviour
     private Vector3 originalScale;
 
     #endregion
+
+
+
+
+    //Descend
+
+    public KeyCode descendKey = KeyCode.Q; // Key for descending
+    public float jumpForce = 8f;  // Jump force value
+
+
+
+
+
+
     #endregion
 
     #region Head Bob
@@ -356,6 +379,22 @@ public class FirstPersonController : MonoBehaviour
 
         #endregion
 
+
+
+
+
+
+
+
+        if (Input.GetKey(descendKey))
+        {
+            Descend();
+        }
+
+
+
+
+
         CheckGround();
 
         if(enableHeadBob)
@@ -474,6 +513,24 @@ public class FirstPersonController : MonoBehaviour
             Crouch();
         }
     }
+
+
+    public void Descend()
+    {
+        if (!isGrounded) // Only allow descending when in the air
+        {
+            rb.AddForce(Vector3.down * jumpForce, ForceMode.Acceleration);
+        }
+    }
+
+
+
+
+
+
+
+
+
 
     private void Crouch()
     {

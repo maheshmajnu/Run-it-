@@ -43,9 +43,9 @@ Material:
     m_Ints: []
     m_Floats:
     - _Edge_power: 2.95
-    - _Line_scale: 25.33
-    - _Line_speed: 5.75
-    - _Lines_strength: 5.4
+    - _Line_scale: 46.41
+    - _Line_speed: 9.7
+    - _Lines_strength: 5.7
     - _QueueControl: 0
     - _QueueOffset: 0
     m_Colors:
